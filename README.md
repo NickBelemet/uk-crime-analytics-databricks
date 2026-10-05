@@ -40,4 +40,29 @@ uk-crime-analytics-databricks/
 
 The repository contains **code, documentation and configuration only**.
 
-Large ZIP files, CSV files and other raw datasets should remain in Databricks and must not be committed to GitHub.
+
+##Pls read!
+
+The initial Police.uk backfill and Bronze ingestion have already been run.
+
+**You do not need to rerun the files in `src/ingestion`.**
+
+The resulting Bronze tables are available in our shared Databricks environment:
+
+- `workspace.uk_crime_bronze.street_crime`
+- `workspace.uk_crime_bronze.outcomes`
+- `workspace.uk_crime_bronze.stop_search`
+
+The ingestion scripts are kept in the repository as part of the pipeline code and for future development.
+
+When working on the project/starting:
+
+1. Pull the latest `main` branch.
+2. Check that you can query the Bronze tables in Databricks
+3. Create a new feature branch for your task
+4. Develop and test your work on that branch
+5. Push your changes and open a Pull Request into `main`
+
+Please avoid overwriting or dropping shared tables without checking with the group first.
+
+thx 
