@@ -64,30 +64,14 @@ Bronze stores the source data in Delta tables with standardised column names and
 
 Silver is where we'll prepare the Bronze data for analysis.
 
-This could include:
-
-- Converting columns into appropriate data types
-- Handling missing values and duplicates
-- Standardising dates and crime categories
-- Validating geographic coordinates
-- Enriching data with geographic information
-- Implementing data quality checks
-
 The resulting tables should be clean, consistent and suitable for further analysis.
 
 ### Gold — Analytics
 
 Gold will contain the final aggregated, analytics-ready datasets built from Silver.
 
-Potential examples include:
 
-- Monthly crime trends and changes over time
-- Crime distribution by police force or geographic area
-- Crime outcome statistics
-- Stop-and-search patterns
-- KPIs for our dashboard or application
-
-We'll decide on the specific analytical questions and outputs together.
+We'll decide on the specific analytical questions and outputs as a team for when it comes to creating the dashboard!
 
 ---
 
