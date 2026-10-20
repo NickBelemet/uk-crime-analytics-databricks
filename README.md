@@ -97,6 +97,8 @@ workspace
 
 ## Repository Structure
 
+This is the proposed GitHub structure as we move into Silver and Gold.
+
 ```text
 uk-crime-analytics-databricks/
 │
@@ -121,7 +123,50 @@ uk-crime-analytics-databricks/
 └── README.md
 ```
 
-The repository contains **code, documentation and configuration only**.
+These folders are a suggested structure, not a strict requirement. We can add and adjust them as we go.
+
+The repository should contain **code, documentation and configuration only**. Raw Police.uk CSV/ZIP files should remain in Databricks, not GitHub.
+
+---
+
+## Pls Read! :)
+
+The initial Police.uk backfill and Bronze ingestion have already been completed.
+
+**You do not need to rerun the files in `src/ingestion`.**
+
+The resulting Bronze tables are available in the original Databricks environment:
+
+- `workspace.uk_crime_bronze.street_crime`
+- `workspace.uk_crime_bronze.outcomes`
+- `workspace.uk_crime_bronze.stop_search`
+
+You'll need access to the same Databricks environment to query these tables. Connecting GitHub alone doesn't automatically share the data.
+
+The ingestion scripts are kept in the repository as part of the pipeline code and for future development.
+
+### When starting work
+
+1. Pull the latest `main` branch.
+2. Check that you can access the relevant Bronze tables in Databricks.
+3. Create a new feature branch for your task.
+4. Develop and test your work on that branch.
+5. Commit and push your changes.
+6. Open a Pull Request into `main` so we can review and merge the changes.
+
+For example, branch names could be:
+
+```text
+feature/silver-crime-cleaning
+feature/data-quality
+feature/geographic-enrichment
+feature/gold-analysis
+feature/dashboard
+```
+
+Please avoid overwriting or dropping shared tables without checking with the group first. Git branches separate our code changes, but they don't create separate copies of Databricks tables.
+
+We'll figure out the remaining tasks and divide up the work as we go!
 
 Large ZIP files, CSV files, XLSX files and other raw datasets should remain in Databricks UC volumes and must not be committed to GitHub.
 
